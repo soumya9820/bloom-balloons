@@ -13,7 +13,13 @@
   /* ---- nav: frosted-on-scroll; solid when there's no hero (e.g. Projects) ---- */
   if (nav) {
     if (!hero) nav.classList.add('scrolled');
-    const onScroll = () => { if (hero) nav.classList.toggle('scrolled', window.scrollY > 40); };
+    // Over the hero, keep the nav transparent/light; only frost once the
+    // hero has been scrolled fully past.
+    const onScroll = () => {
+      if (!hero) return;
+      const trigger = hero.offsetHeight - 80;
+      nav.classList.toggle('scrolled', window.scrollY > trigger);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
@@ -45,7 +51,7 @@
     const move = () => {
       const r = story.getBoundingClientRect();
       const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; // ~ -1..1
-      band.style.transform = `translate3d(0, ${(-p * 64).toFixed(1)}px, 0)`;
+      band.style.transform = `translate3d(0, ${(-p * 140).toFixed(1)}px, 0)`;
       ticking = false;
     };
     window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
@@ -161,6 +167,12 @@
         if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
         else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
+    });
+    // featured cards on the home page open the modal right here (no page jump)
+    document.querySelectorAll('a.proj[href*="#"]').forEach((a) => {
+      const slug = a.getAttribute('href').split('#')[1] || '';
+      const fp = PROJECTS.find((x) => x.slug === slug);
+      if (fp) a.addEventListener('click', (e) => { e.preventDefault(); openModal(fp, a); });
     });
     // deep-link: projects.html#peaches opens that study
     const hash = decodeURIComponent(location.hash.slice(1));

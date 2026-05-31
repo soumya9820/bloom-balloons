@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BLOOM · Balloon Atelier — Handcrafted Balloon Arches & Installations</title>
+<title>Bloom by Soumya Sharma · Balloon Atelier</title>
 <meta name="description" content="BLOOM is a balloon atelier crafting bespoke pastel balloon arches, garlands and installations. Design your arch and get an instant estimate." />
 <meta name="theme-color" content="#FBF7F2" />
-<meta property="og:title" content="BLOOM · Balloon Atelier" />
+<meta property="og:title" content="Bloom by Soumya Sharma · Balloon Atelier" />
 <meta property="og:description" content="Handcrafted balloon arches and installations that turn an ordinary room into the photograph you'll keep forever." />
 <meta property="og:type" content="website" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='14' r='10' fill='%23EFB7C0'/%3E%3Crect x='15' y='22' width='2' height='8' rx='1' fill='%23C7A26B'/%3E%3C/svg%3E" />
@@ -20,7 +20,7 @@
 
 <!-- NAV -->
 <nav id="nav" class="over-hero">
-  <a href="#top" class="logo" aria-label="BLOOM home">BL<span>O</span>OM<span class="tm">™</span></a>
+  <a href="#top" class="logo" aria-label="Bloom by Soumya Sharma — home"><span class="mark">Blo<span class="ax">o</span>m</span><span class="by">by Soumya&nbsp;Sharma</span></a>
   <div class="nav-links" id="navLinks">
     <a href="#services">Services</a>
     <a href="projects.html">Projects</a>
@@ -32,7 +32,7 @@
 
 <!-- HERO · one balloon-arch scene → backdrop + soft foreground frame (parallax) -->
 <header class="hero" id="top">
-  <div class="plane back" data-speed="0.10" data-depth="10">
+  <div class="plane back" data-speed="-0.32">
     <picture>
       <source type="image/webp" srcset="assets/img/hero/scene.webp">
       <img id="heroBack" src="assets/img/hero/scene.jpg" alt="An elegant sage, gold and cream balloon arch installation framed by greenery" fetchpriority="high">
@@ -41,7 +41,7 @@
 
   <div class="hero-scrim" aria-hidden="true"></div>
 
-  <div class="hero-content" data-speed="0.24" data-depth="7">
+  <div class="hero-content" data-speed="0.08">
     <span class="eyebrow">Balloon Atelier · By Appointment</span>
     <h1>
       <span class="l" style="animation-delay:.7s">Moments&nbsp;worth</span><br>
@@ -52,14 +52,6 @@
       <a href="#quote" class="btn btn-primary">Design your arch →</a>
       <a href="projects.html" class="btn btn-ghost">See our work</a>
     </div>
-  </div>
-
-  <!-- soft foreground frame, cut from the same installation so it blends (nearest depth layer) -->
-  <div class="layer soft" data-speed="0.46" data-depth="30" data-float="9" style="left:-7%;bottom:-8%;width:clamp(240px,32vw,540px)">
-    <img class="rise-img" src="assets/img/hero/balloon-2.webp" alt="" aria-hidden="true">
-  </div>
-  <div class="layer softer" data-speed="0.56" data-depth="38" data-float="13" style="right:-9%;bottom:-12%;width:clamp(220px,29vw,500px)">
-    <img class="rise-img" src="assets/img/hero/fg-1.webp" alt="" aria-hidden="true">
   </div>
 
   <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="dot"></span></div>
@@ -273,14 +265,32 @@
 
 <footer>
   <div class="wrap">
-    <span class="logo">BL<span style="color:var(--rose)">O</span>OM</span>
+    <span class="logo"><span class="mark">Blo<span class="ax">o</span>m</span><span class="by">by Soumya&nbsp;Sharma</span></span>
     <div class="social">
       <a href="#" rel="nofollow">Instagram</a><a href="#" rel="nofollow">Pinterest</a><a href="#" rel="nofollow">TikTok</a>
     </div>
-    <p>© 2026 BLOOM Balloon Atelier · Handcrafted with care</p>
+    <p>© 2026 Bloom by Soumya Sharma · Handcrafted with care</p>
     <p class="proto">Prototype — placeholder brand, stock imagery &amp; contact details. Swap in the real business before launch.</p>
   </div>
 </footer>
+
+<!-- PROJECT MODAL (so home-page cards open in place) -->
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal">
+    <div class="modal-scroll">
+      <div class="modal-hero" id="modalHero"></div>
+      <div class="modal-body">
+        <span class="eyebrow" id="modalKicker"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText1"></p>
+        <p id="modalText2"></p>
+        <div class="modal-palette" id="modalPalette"></div>
+        <div class="modal-stats" id="modalStats"></div>
+        <a href="#quote" class="btn btn-primary">Plan something similar →</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
