@@ -24,16 +24,14 @@
     onScroll();
   }
   if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
+    const setMenu = (open) => {
+      navLinks.classList.toggle('open', open);
       menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    navLinks.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      })
-    );
+      menuBtn.textContent = open ? '✕' : '☰';
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    menuBtn.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+    navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
   }
 
   /* ---- scroll reveals ---- */
