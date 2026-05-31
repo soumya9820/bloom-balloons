@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects · BLOOM Balloon Atelier</title>
+<meta name="description" content="Six recent BLOOM balloon installations — baby showers, weddings, birthdays and launches — each built to its own pastel palette." />
+<meta name="theme-color" content="#FBF7F2" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='14' r='10' fill='%23EFB7C0'/%3E%3Crect x='15' y='22' width='2' height='8' rx='1' fill='%23C7A26B'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo" aria-label="BLOOM home">BL<span>O</span>OM<span class="tm">™</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html#services">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#story">The Craft</a>
+    <a href="index.html#quote" class="nav-cta">Get a Quote</a>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow reveal">Selected work</span>
+    <h1 class="reveal d1">Projects</h1>
+    <p class="reveal d2">Six recent celebrations, each built to its own palette and space. Tap any project to read the story, the build and the numbers behind it.</p>
+  </div>
+</section>
+
+<!-- PROJECTS GRID (rendered by js/reveal.js) -->
+<section class="section-pad projects" style="padding-top:clamp(24px,4vh,46px)">
+  <div class="wrap">
+    <div class="proj-grid three" id="projGrid"></div>
+    <div style="text-align:center;margin-top:56px" class="reveal d1">
+      <a href="index.html#quote" class="btn btn-primary">Plan something similar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-pad contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal">Let’s make something beautiful</span>
+    <h2 class="reveal d1" style="margin-top:18px">Your story is <em>next.</em></h2>
+    <p class="reveal d2">Tell us your date, your space and a little inspiration — we’ll reply within 24 hours with ideas and availability.</p>
+    <div class="hero-btns reveal d3" style="justify-content:center">
+      <a href="index.html#quote" class="btn btn-primary">Start a quote</a>
+      <a href="mailto:hello@bloomballoons.example" class="btn btn-ghost">Email us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="logo" style="text-decoration:none">BL<span style="color:var(--rose)">O</span>OM</a>
+    <div class="social">
+      <a href="#" rel="nofollow">Instagram</a><a href="#" rel="nofollow">Pinterest</a><a href="#" rel="nofollow">TikTok</a>
+    </div>
+    <p>© 2026 BLOOM Balloon Atelier · Handcrafted with care</p>
+    <p class="proto">Prototype — placeholder brand, stock imagery &amp; contact details. Swap in the real business before launch.</p>
+  </div>
+</footer>
+
+<!-- PROJECT MODAL -->
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal">
+    <div class="modal-hero" id="modalHero"></div>
+    <div class="modal-body">
+      <span class="eyebrow" id="modalKicker"></span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText1"></p>
+      <p id="modalText2"></p>
+      <div class="modal-palette" id="modalPalette"></div>
+      <div class="modal-stats" id="modalStats"></div>
+      <a href="index.html#quote" class="btn btn-primary">Plan something similar →</a>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/reveal.js" defer></script>
+</body>
+</html>
