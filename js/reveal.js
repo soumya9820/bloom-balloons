@@ -51,7 +51,7 @@
     const move = () => {
       const r = story.getBoundingClientRect();
       const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight; // ~ -1..1
-      band.style.transform = `translate3d(0, ${(-p * 140).toFixed(1)}px, 0)`;
+      band.style.transform = `translate3d(0, ${(-p * 230).toFixed(1)}px, 0)`;
       ticking = false;
     };
     window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
