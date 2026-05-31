@@ -287,7 +287,7 @@ section{position:relative}
 .contact-meta a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .3s,border-color .3s}
 .contact-meta a:hover{color:var(--rose);border-color:var(--rose)}
 footer{padding:54px 0 64px;text-align:center;color:var(--ink-soft);font-size:.86rem;background:var(--lav)}
-footer .logo{font-size:1.3rem;display:inline-block;margin-bottom:16px}
+footer .logo{display:inline-flex;margin-bottom:16px}
 footer .social{display:flex;gap:24px;justify-content:center;margin:18px 0}
 footer .social a{color:var(--ink);text-decoration:none;opacity:.72}
 footer .social a:hover{opacity:1;color:var(--rose)}
