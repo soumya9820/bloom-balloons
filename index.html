@@ -30,43 +30,36 @@
   <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">☰</button>
 </nav>
 
-<!-- HERO · Option A discrete-cutout parallax -->
+<!-- HERO · one balloon-arch scene → backdrop + soft foreground frame (parallax) -->
 <header class="hero" id="top">
-  <div class="plane back" data-speed="0.10" data-depth="8">
+  <div class="plane back" data-speed="0.10" data-depth="10">
     <picture>
       <source type="image/webp" srcset="assets/img/hero/scene.webp">
-      <img id="heroBack" src="assets/img/hero/scene.jpg" alt="A soft pastel balloon installation in peach, sage and gold" fetchpriority="high">
+      <img id="heroBack" src="assets/img/hero/scene.jpg" alt="An elegant sage, gold and cream balloon arch installation framed by greenery" fetchpriority="high">
     </picture>
-  </div>
-
-  <div class="hero-glow" aria-hidden="true"></div>
-
-  <!-- behind the headline (sharp) -->
-  <div class="layer behind" data-speed="0.30" data-depth="16" style="top:2%;right:-1%;width:clamp(210px,29vw,440px)">
-    <img class="rise-img" style="animation-delay:.95s" src="assets/img/hero/balloon-1.webp" alt="" aria-hidden="true">
   </div>
 
   <div class="hero-scrim" aria-hidden="true"></div>
 
-  <div class="hero-content" data-speed="0.26" data-depth="5">
+  <div class="hero-content" data-speed="0.24" data-depth="7">
     <span class="eyebrow">Balloon Atelier · By Appointment</span>
     <h1>
       <span class="l" style="animation-delay:.7s">Moments&nbsp;worth</span><br>
       <span class="l serif-italic" style="animation-delay:.85s">floating&nbsp;for.</span>
     </h1>
-    <p>Handcrafted balloon arches and installations that turn an ordinary room into the photograph you’ll keep forever.</p>
+    <p>Bespoke balloon arches and installations, built by hand in your colors — the centerpiece your guests photograph before they say hello.</p>
     <div class="hero-btns">
       <a href="#quote" class="btn btn-primary">Design your arch →</a>
       <a href="projects.html" class="btn btn-ghost">See our work</a>
     </div>
   </div>
 
-  <!-- in front, at the edges — never over the headline -->
-  <div class="layer front soft" data-speed="0.52" data-depth="26" style="left:-3%;bottom:-9%;width:clamp(180px,25vw,380px)">
-    <img class="rise-img" style="animation-delay:1.05s" src="assets/img/hero/balloon-2.webp" alt="" aria-hidden="true">
+  <!-- soft foreground frame, cut from the same installation so it blends (nearest depth layer) -->
+  <div class="layer soft" data-speed="0.46" data-depth="30" data-float="9" style="left:-7%;bottom:-8%;width:clamp(240px,32vw,540px)">
+    <img class="rise-img" src="assets/img/hero/balloon-2.webp" alt="" aria-hidden="true">
   </div>
-  <div class="layer front softer" data-speed="0.58" data-depth="32" style="right:-3%;bottom:-6%;width:clamp(150px,21vw,320px)">
-    <img class="rise-img" style="animation-delay:1.2s" src="assets/img/hero/balloon-3.webp" alt="" aria-hidden="true">
+  <div class="layer softer" data-speed="0.56" data-depth="38" data-float="13" style="right:-9%;bottom:-12%;width:clamp(220px,29vw,500px)">
+    <img class="rise-img" src="assets/img/hero/fg-1.webp" alt="" aria-hidden="true">
   </div>
 
   <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="dot"></span></div>
