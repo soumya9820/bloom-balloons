@@ -68,41 +68,64 @@
 
   /* ---- projects grid + accessible modal (Projects page) ---- */
   const PROJECTS = [
-    { slug: 'peaches', kicker: 'Baby Shower · Garden', title: 'Peaches & Cream',
-      palette: ['#FBE0CF', '#F6D4D8', '#FBEFCB'],
-      t1: 'A soft, sun-warmed garland framing a dessert table for a spring baby shower of forty guests, set against weathered garden wood.',
-      t2: 'We blended peach, blush and butter into an organic, asymmetric cloud that spilled gently down one side — relaxed, romantic and impossible to walk past without taking a photo.',
-      stats: [['12 ft', 'Garland length'], ['3', 'Custom colors'], ['40', 'Guests']] },
-    { slug: 'lavender', kicker: '1st Birthday · Indoor', title: 'Lavender Dream',
-      palette: ['#E6DCF2', '#CDBEE6', '#F6D4D8'],
-      t1: 'A dreamy lavender installation for a first birthday, glowing in the last light of a late-summer evening.',
-      t2: 'Layered lilacs and a whisper of blush — anchored by a statement number — turned an open room into a soft, storybook frame the family will keep forever.',
-      stats: [['Full arch', 'Statement size'], ['4', 'Custom colors'], ['On-site', 'Setup']] },
-    { slug: 'blush', kicker: 'Wedding · Garden', title: 'Blush Ceremony',
-      palette: ['#F6D4D8', '#FBE6E8', '#EFB7C0'],
-      t1: 'A romantic half-moon arch behind the vows for an intimate garden wedding of one hundred and twenty.',
-      t2: 'We kept the palette tight — three blush tones — so the greenery and the couple did the talking, with balloons that read like petals from across the lawn.',
-      stats: [['Half-moon', 'Design'], ['3', 'Blush tones'], ['120', 'Guests']] },
-    { slug: 'mint-gold', kicker: 'Grand Opening · Retail', title: 'Mint & Gold',
-      palette: ['#D8EEE2', '#FBEFCB', '#C7A26B'],
-      t1: 'A bright, photo-ready double arch flanking the entrance of a boutique’s grand opening.',
-      t2: 'Fresh mint met butter and warm chrome gold for a storefront moment guests couldn’t resist sharing — on-brand, on-trend and built to last the whole weekend.',
-      stats: [['Double arch', 'Design'], ['3', 'Custom colors'], ['Storefront', 'Install']] },
-    { slug: 'midnight', kicker: 'Milestone · Evening', title: 'Midnight Bloom',
-      palette: ['#6E5A78', '#B98AA0', '#F4E9DC'],
-      t1: 'A moody, full-wall backdrop for a milestone birthday held after dark.',
-      t2: 'Five deep tones — plum, dusty rose and cream among them — layered into a rich, candlelit bloom that made the room feel like a private, glamorous secret.',
-      stats: [['Full wall', 'Backdrop'], ['5', 'Custom colors'], ['Evening', 'Event']] },
-    { slug: 'sky-sage', kicker: 'Corporate · Launch', title: 'Sky & Sage',
-      palette: ['#D9E8F3', '#C7DDC9', '#F4E9DC'],
-      t1: 'A clean, considered garland for a corporate product launch, styled to read from the back of the room.',
-      t2: 'Sky blue, sage and white in a sixteen-foot sweep gave the stage a calm, confident frame — modern enough for the brand, warm enough for the after-party.',
-      stats: [['16 ft', 'Garland length'], ['3', 'Custom colors'], ['Stage', 'Corporate']] },
+    { slug: 'up-away', kicker: 'Baby Shower · Garden', title: 'Up & Away',
+      images: ['up-away-1', 'up-away-2'],
+      palette: ['#E7A4B8', '#CBA07C', '#F4E4DC'],
+      t1: 'An open-air welcome for a baby girl, styled around a soft “up, up & away” daydream of hot-air balloons and pastel skies.',
+      t2: 'Pink, rose-gold and pearl tumbled down a trio of dusty-rose arches in one organic garland — anchored by a watercolor balloon backdrop, a vintage floral carriage, stacked “BABY” blocks and a little candy cart. The kind of scene guests photograph before they find their seats.',
+      stats: [['Triple arch', 'Backdrop'], ['Garden', 'Outdoor setup'], ['Carriage', '+ candy cart']] },
+    { slug: 'baby-bloom', kicker: 'Baby Shower · Indoor', title: 'Baby in Bloom',
+      images: ['baby-bloom'],
+      palette: ['#F2C2CE', '#C7A26B', '#D8E2CF'],
+      t1: 'An elegant indoor shower for a mum-to-be who wanted soft, modern and unmistakably feminine — pink and gold, nothing fussy.',
+      t2: 'We framed a pair of blush arches with a free-flowing garland of pink, white and antique gold, threaded with trailing greenery, and finished the moment with a hand-lettered “Baby in Bloom” in gold script.',
+      stats: [['Double arch', 'Backdrop'], ['Indoor', 'Venue'], ['Gold script', 'Custom sign']] },
+    { slug: 'cocoa-cream', kicker: 'Baby Shower · Indoor', title: 'Cocoa & Cream',
+      images: ['cocoa-cream'],
+      palette: ['#8C6A52', '#C9A883', '#EFE3D2'],
+      t1: 'A teddy-bear shower for a family who wanted grown-up and gender-neutral — all the warmth, not a single primary color in sight.',
+      t2: 'Oversized orbs in cocoa, caramel, latte and pearl floated from the ceiling on satin ribbons and tiny bows, drifting softly over the room like a sky full of little bears.',
+      stats: [['Ceiling', 'Installation'], ['Neutral', 'Palette'], ['Orbs', 'On satin ribbon']] },
+    { slug: 'time-flies', kicker: '1st Birthday · Indoor', title: 'Time Flies',
+      images: ['time-flies'],
+      palette: ['#A9C2D6', '#B5673C', '#E9DCC4'],
+      t1: 'A vintage-aviator first birthday for a little man about to turn one — dusty skies, propellers and well-worn leather.',
+      t2: 'A full portal arch in powder blue, rust and cream, freckled with chrome gold, wrapped a “How Time Flies” banner of biplanes and hot-air balloons. Nostalgic, handsome, and built for the cake-smash photos.',
+      stats: [['Full arch', 'Portal'], ['Aviator', 'Theme'], ['4', 'Custom colors']] },
+    { slug: 'congrats-grad', kicker: 'Graduation · Evening', title: 'Congrats, Grad',
+      images: ['congrats-grad'],
+      palette: ['#C58B6F', '#2B2530', '#F1EAE2'],
+      t1: 'A grown-up graduation moment for a new graduate who wanted glam — rose-gold, black and white, nothing that reads like a kid’s party.',
+      t2: 'Chrome rose-gold, matte black and pearl white spiralled up an arched backdrop beside a hand-lettered “Congrats Grad”, with a matching cluster anchoring the frame — a photo wall built to hold its own in a dim, dramatic room.',
+      stats: [['Twin arch', 'Backdrop'], ['Rose-gold', 'Metallics'], ['Evening', 'Event']] },
+    { slug: 'barnyard-bash', kicker: 'Toddler Birthday · Outdoor', title: 'Barnyard Bash',
+      images: ['barnyard-bash'],
+      palette: ['#C5433B', '#A9C8E0', '#F0B98A'],
+      t1: 'An outdoor barnyard bash for a toddler who loves animals — red barns, hay bales and a whole lot of moo.',
+      t2: 'A bright, playful garland in sky blue, peach, barn-red and white — speckled with cow-print balloons — arched over a farmyard backdrop and a hay-bale table, cheerful enough to keep up with a two-year-old.',
+      stats: [['Full arch', 'Barnyard'], ['Outdoor', 'Setting'], ['Cow-print', 'Accents']] },
   ];
 
-  function pic(slug, alt) {
-    return `<picture><source type="image/webp" srcset="assets/img/projects/${slug}.webp">` +
-           `<img src="assets/img/projects/${slug}.jpg" alt="${alt}" loading="lazy" decoding="async"></picture>`;
+  // single <img> for a project slug (jpg only — these are the real event photos)
+  function imgTag(slug, alt, lazy) {
+    return `<img src="assets/img/projects/${slug}.jpg" alt="${alt}"` +
+           (lazy ? ' loading="lazy"' : '') + ' decoding="async">';
+  }
+
+  // modal hero: a single image, or a swipeable carousel when there are 2+ photos
+  function heroMarkup(p) {
+    if (p.images.length < 2) return imgTag(p.images[0], p.title, false);
+    const slides = p.images
+      .map((s, idx) => `<div class="car-slide">${imgTag(s, p.title + ' — photo ' + (idx + 1), false)}</div>`)
+      .join('');
+    const dots = p.images
+      .map((_, idx) => `<button class="car-dot${idx === 0 ? ' on' : ''}" data-i="${idx}" aria-label="Show photo ${idx + 1}"></button>`)
+      .join('');
+    return `<div class="carousel" data-i="0">` +
+           `<div class="car-track">${slides}</div>` +
+           `<button class="car-arrow prev" aria-label="Previous photo">‹</button>` +
+           `<button class="car-arrow next" aria-label="Next photo">›</button>` +
+           `<div class="car-dots">${dots}</div></div>`;
   }
 
   const grid = document.getElementById('projGrid');
@@ -111,8 +134,10 @@
       const btn = document.createElement('button');
       btn.className = 'proj reveal' + (i % 3 === 1 ? ' d1' : i % 3 === 2 ? ' d2' : '');
       btn.setAttribute('aria-haspopup', 'dialog');
+      const multi = p.images.length > 1
+        ? `<span class="proj-multi" aria-hidden="true">⧉ ${p.images.length}</span>` : '';
       btn.innerHTML =
-        `<div class="proj-img">${pic(p.slug, p.title + ' — ' + p.kicker)}</div>` +
+        `<div class="proj-img">${imgTag(p.images[0], p.title + ' — ' + p.kicker, true)}</div>` + multi +
         `<div class="proj-overlay"><span class="k">${p.kicker}</span><h3>${p.title}</h3>` +
         `<div class="swatch-row">${p.palette.map((c) => `<i style="background:${c}"></i>`).join('')}</div>` +
         `<span class="open">Read the case study →</span></div>`;
@@ -125,11 +150,12 @@
   /* modal */
   const modalBg = document.getElementById('modalBg');
   let lastFocus = null;
+  let car = null; // active hero-carousel controller (null when a project has one photo)
   function openModal(p, trigger) {
     if (!modalBg) return;
     lastFocus = trigger || document.activeElement;
     document.getElementById('modalHero').innerHTML =
-      pic(p.slug, p.title) + '<button class="modal-close" id="modalClose" aria-label="Close">✕</button>';
+      heroMarkup(p) + '<button class="modal-close" id="modalClose" aria-label="Close">✕</button>';
     document.getElementById('modalKicker').textContent = p.kicker;
     document.getElementById('modalTitle').textContent = p.title;
     document.getElementById('modalText1').textContent = p.t1;
@@ -143,14 +169,45 @@
     modalBg.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     document.getElementById('modalClose').addEventListener('click', closeModal);
+    car = initCarousel();
     const modal = modalBg.querySelector('.modal');
     (modal.querySelector('.modal-close')).focus();
   }
+
+  /* hero carousel — arrows, dots, swipe; returns a controller, or null for single-photo */
+  function initCarousel() {
+    const root = modalBg.querySelector('.carousel');
+    if (!root) return null;
+    const track = root.querySelector('.car-track');
+    const dots = Array.prototype.slice.call(root.querySelectorAll('.car-dot'));
+    const n = dots.length;
+    let i = 0;
+    const go = (to) => {
+      i = (to + n) % n;
+      track.style.transform = 'translateX(' + (-i * 100) + '%)';
+      dots.forEach((d, k) => d.classList.toggle('on', k === i));
+      root.setAttribute('data-i', String(i));
+    };
+    root.querySelector('.prev').addEventListener('click', () => go(i - 1));
+    root.querySelector('.next').addEventListener('click', () => go(i + 1));
+    dots.forEach((d) => d.addEventListener('click', () => go(parseInt(d.dataset.i, 10))));
+    let x0 = null; // touch swipe
+    root.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+      x0 = null;
+    }, { passive: true });
+    return { prev: () => go(i - 1), next: () => go(i + 1) };
+  }
+
   function closeModal() {
     if (!modalBg) return;
     modalBg.classList.remove('open');
     modalBg.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    car = null;
     if (lastFocus) lastFocus.focus();
   }
   if (modalBg) {
@@ -158,6 +215,8 @@
     document.addEventListener('keydown', (e) => {
       if (!modalBg.classList.contains('open')) return;
       if (e.key === 'Escape') closeModal();
+      if (car && e.key === 'ArrowLeft') { e.preventDefault(); car.prev(); }
+      if (car && e.key === 'ArrowRight') { e.preventDefault(); car.next(); }
       if (e.key === 'Tab') { // focus trap
         const f = modalBg.querySelectorAll('a[href],button,input,[tabindex]:not([tabindex="-1"])');
         if (!f.length) return;

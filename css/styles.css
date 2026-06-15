@@ -221,6 +221,28 @@ section{position:relative}
 .modal-palette{display:flex;gap:8px;align-items:center;margin-bottom:26px}
 .modal-palette i{width:22px;height:22px;border-radius:50%;box-shadow:0 0 0 1px var(--line)}
 
+/* multi-photo badge on a project card */
+.proj-multi{position:absolute;top:16px;right:16px;z-index:3;font-size:.72rem;font-weight:600;letter-spacing:.03em;
+  background:rgba(251,247,242,.85);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:var(--ink);
+  padding:5px 11px;border-radius:100px;box-shadow:var(--shadow-soft)}
+
+/* modal hero carousel (projects with 2+ photos) */
+.carousel{position:absolute;inset:0;overflow:hidden}
+.car-track{display:flex;height:100%;transition:transform .55s var(--ease)}
+.car-slide{min-width:100%;height:100%}
+.car-slide img{width:100%;height:100%;object-fit:cover}
+.car-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border:none;border-radius:50%;
+  cursor:pointer;background:rgba(251,247,242,.82);color:var(--ink);font-size:1.4rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .3s,transform .3s}
+.car-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.car-arrow.prev{left:16px}
+.car-arrow.next{right:16px}
+.car-dots{position:absolute;left:0;right:0;bottom:14px;z-index:3;display:flex;gap:8px;justify-content:center}
+.car-dot{width:8px;height:8px;padding:0;border:none;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.55);
+  box-shadow:0 0 0 1px rgba(0,0,0,.12);transition:transform .3s,background .3s}
+.car-dot.on{background:#fff;transform:scale(1.35)}
+
 /* ---------- QUOTE BUILDER ---------- */
 .quote{background:radial-gradient(120% 90% at 100% 0%,var(--blush-soft) 0%,transparent 50%),var(--cream)}
 .quote-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-top:54px;align-items:start}
