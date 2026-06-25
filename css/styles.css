@@ -203,15 +203,25 @@ section{position:relative}
 .modal-bg{position:fixed;inset:0;background:rgba(40,28,42,.5);backdrop-filter:blur(8px);z-index:200;
   display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
 .modal-bg.open{opacity:1;pointer-events:auto}
-.modal{background:var(--cream);border-radius:30px;max-width:880px;width:100%;max-height:90vh;overflow:hidden;
+.modal{position:relative;background:var(--cream);border-radius:30px;max-width:980px;width:100%;max-height:90vh;overflow:hidden;
   transform:translateY(30px) scale(.98);transition:transform .5s var(--ease);box-shadow:var(--shadow)}
 .modal-bg.open .modal{transform:none}
-.modal-scroll{max-height:90vh;overflow-y:auto}
-.modal-hero{height:320px;position:relative;overflow:hidden}
-.modal-hero img{width:100%;height:100%;object-fit:cover}
-.modal-close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.88);border:none;width:42px;height:42px;
-  border-radius:50%;cursor:pointer;font-size:1.1rem;z-index:3;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft)}
-.modal-body{padding:38px clamp(28px,5vw,52px) 48px}
+/* editorial split — a photo column (left) beside the scrolling story column (right) */
+.modal-scroll{display:flex;align-items:stretch;max-height:90vh;min-height:min(540px,84vh)}
+.modal-hero{position:relative;overflow:hidden;flex:0 0 47%;background:#ece4dc}
+.modal-body{flex:1 1 53%;overflow-y:auto;max-height:90vh;padding:clamp(32px,4vw,46px) clamp(28px,4vw,46px) 44px}
+.modal-close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.9);border:none;width:42px;height:42px;
+  border-radius:50%;cursor:pointer;font-size:1.1rem;z-index:6;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-soft);transition:background .3s,transform .3s}
+.modal-close:hover{background:#fff;transform:scale(1.06)}
+
+/* whole, uncropped photo floated over a soft blurred copy of itself */
+.ph{position:absolute;inset:0}
+.ph-blur{position:absolute;inset:0;background-size:cover;background-position:center;
+  filter:blur(28px) saturate(1.15);transform:scale(1.2);opacity:.5}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,28,42,.06),rgba(40,28,42,.16))}
+.ph-img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;
+  filter:drop-shadow(0 14px 32px rgba(40,28,42,.3))}
 .modal-body .eyebrow{display:block;margin-bottom:14px}
 .modal-body h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 .modal-body p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:16px}
@@ -226,12 +236,11 @@ section{position:relative}
   background:rgba(251,247,242,.85);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:var(--ink);
   padding:5px 11px;border-radius:100px;box-shadow:var(--shadow-soft)}
 
-/* modal hero carousel (projects with 2+ photos) */
+/* modal photo carousel (projects with 2+ photos) */
 .carousel{position:absolute;inset:0;overflow:hidden}
 .car-track{display:flex;height:100%;transition:transform .55s var(--ease)}
-.car-slide{min-width:100%;height:100%}
-.car-slide img{width:100%;height:100%;object-fit:cover}
-.car-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border:none;border-radius:50%;
+.car-slide{min-width:100%;height:100%;position:relative}
+.car-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:42px;height:42px;border:none;border-radius:50%;
   cursor:pointer;background:rgba(251,247,242,.82);color:var(--ink);font-size:1.4rem;line-height:1;
   display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft);
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .3s,transform .3s}
@@ -242,6 +251,13 @@ section{position:relative}
 .car-dot{width:8px;height:8px;padding:0;border:none;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.55);
   box-shadow:0 0 0 1px rgba(0,0,0,.12);transition:transform .3s,background .3s}
 .car-dot.on{background:#fff;transform:scale(1.35)}
+
+/* modal stacks to photo-over-story on phones */
+@media(max-width:760px){
+  .modal-scroll{flex-direction:column;min-height:0;overflow-y:auto}
+  .modal-hero{flex:none;height:44vh;max-height:360px}
+  .modal-body{flex:none;max-height:none;overflow:visible}
+}
 
 /* ---------- QUOTE BUILDER ---------- */
 .quote{background:radial-gradient(120% 90% at 100% 0%,var(--blush-soft) 0%,transparent 50%),var(--cream)}

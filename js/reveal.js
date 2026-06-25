@@ -112,11 +112,19 @@
            (lazy ? ' loading="lazy"' : '') + ' decoding="async">';
   }
 
-  // modal hero: a single image, or a swipeable carousel when there are 2+ photos
+  // a whole, uncropped photo (object-fit:contain) floated over a soft blurred copy of itself
+  function photo(slug, alt) {
+    const url = `assets/img/projects/${slug}.jpg`;
+    return `<div class="ph">` +
+           `<div class="ph-blur" style="background-image:url('${url}')"></div>` +
+           `<img class="ph-img" src="${url}" alt="${alt}" decoding="async"></div>`;
+  }
+
+  // modal photo column: a single photo, or a swipeable carousel when there are 2+ photos
   function heroMarkup(p) {
-    if (p.images.length < 2) return imgTag(p.images[0], p.title, false);
+    if (p.images.length < 2) return photo(p.images[0], p.title);
     const slides = p.images
-      .map((s, idx) => `<div class="car-slide">${imgTag(s, p.title + ' — photo ' + (idx + 1), false)}</div>`)
+      .map((s, idx) => `<div class="car-slide">${photo(s, p.title + ' — photo ' + (idx + 1))}</div>`)
       .join('');
     const dots = p.images
       .map((_, idx) => `<button class="car-dot${idx === 0 ? ' on' : ''}" data-i="${idx}" aria-label="Show photo ${idx + 1}"></button>`)
@@ -154,8 +162,18 @@
   function openModal(p, trigger) {
     if (!modalBg) return;
     lastFocus = trigger || document.activeElement;
-    document.getElementById('modalHero').innerHTML =
-      heroMarkup(p) + '<button class="modal-close" id="modalClose" aria-label="Close">✕</button>';
+    const modal = modalBg.querySelector('.modal');
+    document.getElementById('modalHero').innerHTML = heroMarkup(p);
+    // a single close button, anchored to the top-right of the whole card
+    const oldClose = modal.querySelector('.modal-close');
+    if (oldClose) oldClose.remove();
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'modal-close';
+    closeBtn.id = 'modalClose';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.textContent = '✕';
+    closeBtn.addEventListener('click', closeModal);
+    modal.appendChild(closeBtn);
     document.getElementById('modalKicker').textContent = p.kicker;
     document.getElementById('modalTitle').textContent = p.title;
     document.getElementById('modalText1').textContent = p.t1;
@@ -168,10 +186,8 @@
     modalBg.classList.add('open');
     modalBg.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    document.getElementById('modalClose').addEventListener('click', closeModal);
     car = initCarousel();
-    const modal = modalBg.querySelector('.modal');
-    (modal.querySelector('.modal-close')).focus();
+    closeBtn.focus();
   }
 
   /* hero carousel — arrows, dots, swipe; returns a controller, or null for single-photo */
