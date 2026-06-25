@@ -112,12 +112,9 @@
            (lazy ? ' loading="lazy"' : '') + ' decoding="async">';
   }
 
-  // a whole, uncropped photo (object-fit:contain) floated over a soft blurred copy of itself
+  // a full-bleed photo that fills its column edge-to-edge (object-fit:cover)
   function photo(slug, alt) {
-    const url = `assets/img/projects/${slug}.jpg`;
-    return `<div class="ph">` +
-           `<div class="ph-blur" style="background-image:url('${url}')"></div>` +
-           `<img class="ph-img" src="${url}" alt="${alt}" decoding="async"></div>`;
+    return `<img class="ph-img" src="assets/img/projects/${slug}.jpg" alt="${alt}" decoding="async">`;
   }
 
   // modal photo column: a single photo, or a swipeable carousel when there are 2+ photos
